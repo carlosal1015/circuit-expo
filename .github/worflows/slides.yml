@@ -1,14 +1,10 @@
-name: Slides Webinar Alfaomega
+name: Slides
 
 on:
   push:
     branches: [main]
     paths:
       - src/*
-  pull_request:
-    branches: [main]
-  schedule:
-    - cron: "0 14 * * 5"
 
 jobs:
   build_latex:
