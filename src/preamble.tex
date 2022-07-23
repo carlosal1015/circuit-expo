@@ -1,0 +1,82 @@
+\PassOptionsToPackage{svgnames}{xcolor}
+\documentclass[
+	spanish,
+	9pt,
+	utf8,
+	xcolor=table,
+	handout,
+	aspectratio=1610,
+	notheorems
+]{beamer}
+\usepackage[spanish]{babel}
+\spanishdatedel\decimalpoint
+\usepackage{pgfpages}
+% \setbeameroption{show notes}
+% \setbeameroption{show notes on second screen=right}
+%\setbeamertemplate{note page}[plain]
+\usepackage{mathtools}
+\usepackage{mathrsfs}
+\usepackage{dsfont}
+\usepackage[ISO]{diffcoeff}
+\usetheme{CambridgeUS}
+\usecolortheme{dolphin}
+\useinnertheme{circles}
+%\useoutertheme[hooks]{tree}
+\usefonttheme{serif}%[onlymath]
+\setbeamercovered{dynamic}
+\setbeamertemplate{background canvas}{\includegraphics[height=\paperheight]{background}}
+\setbeamertemplate{footline}[frame number]{}
+\setbeamertemplate{navigation symbols}{}
+\setbeamertemplate{footline}{}
+\setbeamertemplate{headline}{}
+\setbeamertemplate{blocks}[rounded][shadow=false]
+\usepackage[many]{tcolorbox}
+\usepackage{varwidth}
+\usepackage{enumitem}
+\usepackage{minted}
+\usepackage{svg,graphicx}
+\graphicspath{ {img/} }
+\usepackage[
+	backend=biber,
+	style=numeric,
+	defernumbers=true,
+	sorting=ynt,
+	maxbibnames=4,
+	maxcitenames=4
+]{biblatex}
+\usepackage{cleveref}
+\usepackage[
+	%	audience=english
+	audience=spanish
+	%	audience=german
+]{beameraudience}
+
+\title[Un estudio de la dinámica no lineal en el circuito caótico de Chua]{
+	\vspace*{0.2cm}\huge\sffamily
+	Un estudio de la dinámica no lineal en el circuito caótico de Chua
+}
+\subtitle{\vspace*{0.2cm}\large\sffamily
+	Grupo N$^{\circ}$~10\qquad Proyecto ABET de la Escuela Profesional de Matemática
+}
+\author[Aznarán Laos\and Santos Félix\and Vásquez Gavancho]{
+	Carlos A. Aznarán Laos\quad\and\quad
+	André G. Santos Félix\quad\and\quad
+	Alejandro Vásquez Gavancho
+}
+\institute[FC -- UNI]{\large
+	Facultad de Ciencias \and
+	Universidad Nacional de Ingeniería
+}
+\date[Prof. asesor Benito L. Ostos Cordero]{23 de julio del 2022}
+\titlegraphic{
+	\begin{picture}(0,0)
+		\put(180,80){
+			\makebox(0,0)[rt]{\includesvg[width=2.5cm]{logouni}}
+		}
+		\put(-110,80){
+			\makebox(0,0)[rt]{\includegraphics[width=2cm]{ABETlogo}}
+		}
+	\end{picture}
+}
+
+\input{commands}
