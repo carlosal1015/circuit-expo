@@ -179,7 +179,7 @@
 		\begin{figure}[ht!]
 			\centering
 			\includegraphics[width=0.44\paperwidth]{t_n_versus_y}
-			\caption{Mapa de Poincaré: $y\left(t_{n}\right)$ versus $y\left(t_{n+1}\right)$.}\label{fig:chua_solutions}
+			\caption{Mapa de Poincaré: $v_{C_{2}}\left(t_{n}\right)$ versus $v_{C_{2}}\left(t_{n+1}\right)$.}\label{fig:chua_solutions}
 		\end{figure}
 	\end{minipage}
 \end{frame}
@@ -189,7 +189,13 @@
 \begin{frame}[fragile]
 	\frametitle{\secname}
 	\begin{minipage}{0.45\textwidth}
-		Vea el Programa.
+		\inputminted[
+			fontsize=\tiny,
+			highlightlines={13-16,28-30,33-38},
+			firstline=1,
+			lastline=41,
+			escapeinside=||
+		]{python}{chua_double.py}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
 		\inputminted[fontsize=\tiny, highlightlines={13-16,28-30,33-38}, firstline=1, lastline=41]{python}{poincare_chua.py}
