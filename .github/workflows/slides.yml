@@ -36,8 +36,8 @@ jobs:
             yay -S texlive-bibtexextra texlive-latexextra texlive-science texlive-fontsextra jre8-openjdk perl-clone biber minted inkscape --noconfirm
             export PATH="/usr/bin/vendor_perl:$PATH"
             sudo chown -R builder:builder /work && pushd /work/src && arara beamer && popd
-            mkdir -p public && mv src/beamer.pdf public
-            mv public/beamer.pdf public/slides.pdf
+            mkdir -p /work/public && mv /work/src/beamer.pdf /work/public
+            mv /work/public/beamer.pdf /work/public/slides.pdf
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
