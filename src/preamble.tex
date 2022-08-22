@@ -1,12 +1,13 @@
 \PassOptionsToPackage{svgnames}{xcolor}
 \documentclass[
 	spanish,
-	9pt,
+	8pt,
 	utf8,
 	xcolor=table,
 	handout,
-	aspectratio=1610,
-	notheorems
+	aspectratio=169,
+	notheorems,
+	leqno
 ]{beamer}
 \usepackage[spanish]{babel}
 \spanishdatedel\decimalpoint
@@ -21,9 +22,10 @@
 \usetheme{CambridgeUS}
 \usecolortheme{dolphin}
 \useinnertheme{circles}
-%\useoutertheme[hooks]{tree}
+\useoutertheme[hooks]{tree}
 \usefonttheme{serif}%[onlymath]
 \setbeamercovered{dynamic}
+\setbeamertemplate{caption}[numbered]
 \setbeamertemplate{background canvas}{\includegraphics[height=\paperheight]{background}}
 \setbeamertemplate{footline}[frame number]{}
 \setbeamertemplate{navigation symbols}{}
@@ -37,11 +39,11 @@
 \usepackage{svg,graphicx}
 \graphicspath{ {img/} }
 \usepackage[
+	citestyle=numeric,
+	style=apa,
 	backend=biber,
-	style=numeric,
 	defernumbers=true,
 	sorting=ynt,
-	maxbibnames=4,
 	maxcitenames=4
 ]{biblatex}
 \usepackage{cleveref}
@@ -55,8 +57,9 @@
 	\vspace*{0.2cm}\huge\sffamily
 	Un estudio de la dinámica no lineal en el circuito caótico de Chua
 }
-\subtitle{\vspace*{0.2cm}\large\sffamily
-	Grupo N$^{\circ}$~10\qquad Proyecto ABET de la Escuela Profesional de Matemática
+\subtitle{\vspace*{0.2cm}\large\scshape
+	Feria de proyectos estudiantiles\qquad Categoría II\qquad Grupo N$^{\circ}$~3
+	% Proyecto ABET de la Escuela Profesional de Matemática
 }
 \author[Aznarán Laos\and Santos Félix\and Vásquez Gavancho]{
 	Carlos A. Aznarán Laos\quad\and\quad
@@ -67,13 +70,13 @@
 	Facultad de Ciencias \and
 	Universidad Nacional de Ingeniería
 }
-\date[Prof. asesor Benito L. Ostos Cordero]{23 de julio del 2022}
+\date[Prof. asesor Benito L. Ostos Cordero]{23 de agosto del 2022} % 23 de julio del 2022
 \titlegraphic{
 	\begin{picture}(0,0)
 		\put(180,80){
 			\makebox(0,0)[rt]{\includesvg[width=2.5cm]{logouni}}
 		}
-		\put(-110,80){
+		\put(-110,70){
 			\makebox(0,0)[rt]{\includegraphics[width=2cm]{ABETlogo}}
 		}
 	\end{picture}

@@ -1,5 +1,5 @@
 \newcommand{\MVAt}{{\usefont{U}{mvs}{m}{n}\symbol{`@}}}
-\renewcommand{\spanishcontentsname}{Índice analítico}
+\renewcommand{\spanishcontentsname}{Plan de la charla} % Índice analítico
 
 \tcbset{
 	defstyle/.style={
@@ -116,12 +116,12 @@
 \directlua{dofile("timer.lua")}
 
 \providecommand{\interval}[1]{
-\directlua{
-	tex.print(
+	\directlua{
+		tex.print(
 		"\string\\textbf{Tiempo estimado}: " .. #1 .. " segundos."..
 		"\string\\hfill" .. "$t\string\\in" .. "\string\\left[" ..
-		trunc(start/60,2) .. "," .. difference(#1) ..
-		"\string\\right]" .. "$" .. " min.")
+				trunc(start/60,2) .. "," .. difference(#1) ..
+				"\string\\right]" .. "$" .. " min.")
 	}
 }
 %start = difference(#1)
