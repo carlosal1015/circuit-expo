@@ -118,7 +118,7 @@
 \subsection{Mapa de Poincaré}
 
 \begin{frame}
-	\frametitle{\subsecname~\parencite[Capítulo 3]{Viana2021}}
+	\frametitle{\subsecname~\parencite[Sección 5.3, pág. 168]{Viana2021}}
 
 	\begin{minipage}{0.6\textwidth}
 		\begin{definition}{Mapa de Poincaré}{poincaremap}
@@ -197,7 +197,7 @@
 		\begin{figure}[ht!]
 			\centering
 			\includegraphics[width=0.44\paperwidth]{chua_double_atractor}
-			\caption{La sección transversal es el plano $x=1$ en el doble atractor de Chua.}\label{fig:chua_doble_atractor}
+			\caption{La sección transversal es el plano $\Sigma=\left\{\left(V_{C_{1}},V_{C_{2}},i_{L}\right):V_{C_{1}}=1\right\}$ en el doble atractor de Chua.}\label{fig:chua_doble_atractor}
 		\end{figure}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
@@ -212,7 +212,7 @@
 \section{Programas}
 
 \begin{frame}[fragile]
-	\frametitle{\secname~\parencite[Capítulo 3]{Lynch2018}}
+	\frametitle{\secname~\parencite[Sección 8.4.2, pág. 246]{Lynch2018}}
 	\begin{minipage}{0.45\textwidth}
 		\begin{listing}[H]
 			\inputminted[
@@ -222,30 +222,22 @@
 				lastline=33,
 				escapeinside=||
 			]{python}{chua_double_scroll.py}
-			\caption{\texttt{chua\_double\_scroll.py} usa la función~\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html}{\mintinline{python}{scipy.integrate.odeint}}.}
+			\caption{\small\texttt{chua\_double\_scroll.py} usa la función~\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html}{\mintinline{python}{scipy.integrate.odeint}}.}
 		\end{listing}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
-		\inputminted[fontsize=\tiny, highlightlines={13-16,28-30,33-38}, firstline=1, lastline=41]{python}{poincare_chua.py}
+		\begin{listing}[H]
+			\inputminted[
+				fontsize=\tiny,
+				highlightlines={43-45,47-48,51-53,56-64,66,68-70},
+				firstline=43,
+				lastline=70,
+				escapeinside=||
+			]{python}{poincare_chua.py}
+			\caption{\small\texttt{poincare\_chua.py} usa la función~\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html}{\mintinline{python}{scipy.integrate.solve_ivp}}.}
+		\end{listing}
 	\end{minipage}
 \end{frame}
-
-% \begin{frame}[fragile]
-% 	\frametitle{\secname}
-% 	\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html}{\mintinline{python}{scipy.integrate.solve_ivp}}
-% 	\begin{minipage}{0.45\textwidth}
-% 		\inputminted[
-% 			fontsize=\tiny,
-% 			highlightlines={13-16,28-30,33-38},
-% 			firstline=1,
-% 			lastline=41,
-% 			escapeinside=||
-% 		]{python}{chua_double.py}
-% 	\end{minipage}
-% 	\begin{minipage}{0.45\textwidth}
-% 		\inputminted[fontsize=\tiny, highlightlines={13-16,28-30,33-38}, firstline=1, lastline=41]{python}{poincare_chua.py}
-% 	\end{minipage}
-% \end{frame}
 
 \section{Conclusiones}
 
@@ -261,6 +253,13 @@
 		      \
 
 
-		\item De la Figura~\ref{fig:chua_doble_atractor} logramos implementar un programa para poder obtener la sección de Poincaré y hacer las gráficas para hallar el mapa de primer retorno con el objetivo de ver si las órbitas sean estables. % Con la base de este programa podremos analizar otros sistemas caóticos. % Aplicaciones con la encriptación, redes neuronales.
+		\item De la Figura~\ref{fig:chua_doble_atractor} logramos implementar un programa para poder obtener la sección de Poincaré y hacer las gráficas para hallar el mapa de primer retorno con el objetivo de ver si las órbitas sean estables.
+
+		      % Con la base de este programa podremos analizar otros sistemas caóticos. % Aplicaciones con la encriptación, redes neuronales.
+
+		      \
+
+		\item Además del análisis con la sección de Poincaré, existen otros métodos como la \emph{aplicación del círculo},
+		      el \emph{exponente de Lyapunov más grande}, la \emph{dimensión de correlación}.
 	\end{itemize}
 \end{frame}

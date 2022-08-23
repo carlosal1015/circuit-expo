@@ -40,11 +40,6 @@ def chua(t: float, u: ArrayLike) -> ArrayLike:
     return [α * (y - x - f_x), x - y + z, -β * y]
 
 
-t_0: float = 0.0
-t_final: float = 6e4
-t: ArrayLike = linspace(t_0, t_final, int(5e4))
-
-u0: list[float] = [0.1, 0.15, 0.01]
 x_section: int = 1
 
 
@@ -53,10 +48,14 @@ def poincare(t: ArrayLike, vector: ArrayLike) -> float:
     return x - x_section
 
 
+t_0: float = 0.0
+t_final: float = 6e4
+u0: list[float] = [0.1, 0.15, 0.01]
+
 poincare.direction: float = -1
 sol: ArrayLike = solve_ivp(
     chua,
-    [t_0, t_final],  # 60000
+    [t_0, t_final],
     u0,
     events=poincare,
     dense_output=True,
