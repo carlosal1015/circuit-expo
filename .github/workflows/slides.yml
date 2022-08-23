@@ -33,7 +33,7 @@ jobs:
           shell: bash
           run: |
             yay -Syyuq --needed --noconfirm
-            yay -S texlive-bibtexextra texlive-latexextra texlive-science texlive-fontsextra jre8-openjdk perl-clone biber minted inkscape --noconfirm
+            yay -S texlive-bibtexextra texlive-latexextra texlive-science texlive-fontsextra jre8-openjdk perl-clone biber minted inkscape consolas-font --noconfirm
             export PATH="/usr/bin/vendor_perl:$PATH"
             sudo chown -R builder:builder /work && pushd /work/src && arara beamer && popd
             mkdir -p /work/public && mv /work/src/beamer.pdf /work/public

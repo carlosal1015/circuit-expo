@@ -67,7 +67,7 @@
 	El diode de Chua no es único.
 }
 
-\subsection{Sistema de Chua adimensional} % ~\parencite{1085459}
+\subsection{Sistema de Chua adimensional}
 
 \begin{frame}
 	\frametitle{\subsecname}
@@ -118,7 +118,7 @@
 \subsection{Mapa de Poincaré}
 
 \begin{frame}
-	\frametitle{\subsecname}
+	\frametitle{\subsecname~\parencite[Capítulo 3]{Viana2021}}
 
 	\begin{minipage}{0.6\textwidth}
 		\begin{definition}{Mapa de Poincaré}{poincaremap}
@@ -161,7 +161,7 @@
 \section{Simulaciones numéricas}
 
 \begin{frame}
-	\frametitle{\secname\quad$\left(\alpha=10.0, \beta=16.4, m_{0}=-1.22, m_{1}=0.628\right)$}
+	\frametitle{\secname}
 
 	\begin{minipage}{0.45\textwidth}
 		\begin{figure}[ht!]
@@ -180,12 +180,12 @@
 \end{frame}
 
 \begin{frame}
-	\frametitle{\secname\quad$\left(\beta_{1}=16.4,\beta_{2}=16.401\right)$}
+	\frametitle{\secname} % \quad$\left(\beta_{1}=16.4,\beta_{2}=16.401\right)$
 
 	\begin{figure}[ht!]
 		\centering
-		\includegraphics[width=0.9\paperwidth]{changing_beta}
-		\caption{Azul: $\beta_{1}$, rojo: $\beta_{2}$.}\label{fig:lyapunov}
+		\includegraphics[width=0.58\paperwidth]{changing_beta}
+		\caption{Soluciones de $V_{C_{1}}$ para $\beta_{1}\approx\beta_{2}$.}\label{fig:changing_beta}
 	\end{figure}
 
 \end{frame}
@@ -196,15 +196,15 @@
 	\begin{minipage}{0.45\textwidth}
 		\begin{figure}[ht!]
 			\centering
-			\includegraphics[width=0.44\paperwidth]{chua_doble_atractor}
+			\includegraphics[width=0.44\paperwidth]{chua_double_atractor}
 			\caption{La sección transversal es el plano $x=1$ en el doble atractor de Chua.}\label{fig:chua_doble_atractor}
 		\end{figure}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
 		\begin{figure}[ht!]
 			\centering
-			\includegraphics[width=0.44\paperwidth]{t_n_versus_y}
-			\caption{Mapa de Poincaré: $v_{C_{2}}\left(t_{n}\right)$ versus $v_{C_{2}}\left(t_{n+1}\right)$.}\label{fig:chua_solutions}
+			\includegraphics[width=0.44\paperwidth]{V_C_2_t_n_versus_V_C_2_t_n_plus_1}
+			\caption{Mapa de Poincaré: $V_{C_{2}}\left(t_{n}\right)$ versus $V_{C_{2}}\left(t_{n+1}\right)$.}\label{fig:chua_solutions}
 		\end{figure}
 	\end{minipage}
 \end{frame}
@@ -212,7 +212,7 @@
 \section{Programas}
 
 \begin{frame}[fragile]
-	\frametitle{\secname}
+	\frametitle{\secname~\parencite[Capítulo 3]{Lynch2018}}
 	\begin{minipage}{0.45\textwidth}
 		\begin{listing}[H]
 			\inputminted[
@@ -252,8 +252,15 @@
 \begin{frame}
 	\frametitle{\secname}
 	\begin{itemize}
-		\item De la figura podemos ver que el sistema de Chua bajo ciertos parámetros $\alpha= 10$  y $\beta_{1}=16.4$, $\beta_{2}=16.401$ es un sistemas caótico ya que para parámetros muy cercanos obtenemos soluciones muy diferentes.
+		\item De la Figura~\ref{fig:changing_beta} podemos ver que el sistema de Chua bajo ciertos parámetros $\alpha=10$  y $\beta_{1}=16.4$, $\beta_{2}=16.401$ es un sistemas caótico ya que para parámetros muy cercanos obtenemos soluciones muy diferentes.
+
+		      \
+
 		\item Para ciertos parámetros el sistema de Chua se comporta de manera caótica.
-		\item De la figura logramos implementar un programa para poder obtener la sección de Poincaré y hacer las gráficas para hallar el mapa de primer retorno con el objetivo de ver si las órbitas sean estables. % Con la base de este programa podremos analizar otros sistemas caóticos. % Aplicaciones con la encriptación, redes neuronales.
+
+		      \
+
+
+		\item De la Figura~\ref{fig:chua_doble_atractor} logramos implementar un programa para poder obtener la sección de Poincaré y hacer las gráficas para hallar el mapa de primer retorno con el objetivo de ver si las órbitas sean estables. % Con la base de este programa podremos analizar otros sistemas caóticos. % Aplicaciones con la encriptación, redes neuronales.
 	\end{itemize}
 \end{frame}

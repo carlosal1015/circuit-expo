@@ -75,11 +75,11 @@ with plt.style.context("fivethirtyeight"):
     ax.plot(sol.y[0], sol.y[1], sol.y[2], ",", alpha=0.12)
     x, y, z = vectors
     ax.plot(x, y, z, ".", alpha=0.4)
-    ax.set_xlabel(r"$v_{C_{1}}$", fontsize=15)
-    ax.set_ylabel(r"$v_{C_{2}}$", fontsize=15)
+    ax.set_xlabel(r"$V_{C_{1}}$", fontsize=15)
+    ax.set_ylabel(r"$V_{C_{2}}$", fontsize=15)
     ax.set_zlabel(r"$i_{L}$", fontsize=15)
     plt.tick_params(labelsize=15)
-    plt.savefig("chua_doble_atractor.pdf", transparent=True, bbox_inches="tight")
+    plt.savefig("img/chua_double_atractor.pdf", transparent=True, bbox_inches="tight")
     plt.close()
 
 with plt.style.context("fivethirtyeight"):
@@ -88,17 +88,21 @@ with plt.style.context("fivethirtyeight"):
     ax.view_init(30, -90)
     ax.plot(sol.y[0], sol.y[1], sol.y[2], ",")
     ax.plot(x, y, z, ".")
-    ax.set_xlabel(r"$v_{C_{1}}$", fontsize=15)
-    ax.set_ylabel(r"$v_{C_{2}}$", fontsize=15)
+    ax.set_xlabel(r"$V_{C_{1}}$", fontsize=15)
+    ax.set_ylabel(r"$V_{C_{2}}$", fontsize=15)
     ax.set_zlabel(r"$i_{L}$", fontsize=15)
-    plt.savefig("chua_doble_atractor30.pdf", transparent=True, bbox_inches="tight")
+    plt.savefig("img/chua_double_atractor30.pdf", transparent=True, bbox_inches="tight")
     plt.close()
 
 
 with plt.style.context("fivethirtyeight"):
     y = vectors[1]
     plt.plot(y[:-1], y[1:], ",")
-    plt.xlabel(r"$v_{C_{2}}\left(t_{n}\right)$", fontsize=15)
-    plt.ylabel(r"$v_{C_{2}}\left(t_{n+1}\right)$", fontsize=15)
-    plt.savefig("poincare_chua.pdf", transparent=True, bbox_inches="tight")
+    plt.xlabel(r"$V_{C_{2}}\left(t_{n}\right)$", fontsize=15)
+    plt.ylabel(r"$V_{C_{2}}\left(t_{n+1}\right)$", fontsize=15)
+    plt.savefig(
+        "img/V_C_2_t_n_versus_V_C_2_t_n_plus_1.pdf",
+        transparent=True,
+        bbox_inches="tight",
+    )
     plt.close()
