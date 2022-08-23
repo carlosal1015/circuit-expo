@@ -71,7 +71,7 @@ plt.clf()
 fig, ax = plt.subplots(constrained_layout=True)
 (line1,) = ax.plot(time, X_s[:, 0], "r", label=r"$\beta_{1}=16.4$")
 (line2,) = ax.plot(time, Xs_1[:, 0], label=r"$\beta_{2}=16.401$")
-ax.set_xlim([30, 100])
+ax.set_xlim([25, 105])
 ax.legend(
     loc="upper center",
     shadow=True,

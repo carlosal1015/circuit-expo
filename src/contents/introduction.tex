@@ -26,7 +26,7 @@
 		\item
 
 		      En el trabajo~\Citetitle{1085459} estudiamos el
-		      comportamiento caótico del circuito y el
+		      comportamiento caótico del circuito y un
 		      \alert{método de convergencia de órbitas} que nos ayudará
 		      a estabilizar el mismo.
 	\end{itemize}
@@ -220,7 +220,8 @@
 				highlightlines={13-22, 25-28, 30-31, 33},
 				firstline=13,
 				lastline=33,
-				escapeinside=||
+				escapeinside=||,
+				breaklines,
 			]{python}{chua_double_scroll.py}
 			\caption{\small\texttt{chua\_double\_scroll.py} usa la función~\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html}{\mintinline{python}{scipy.integrate.odeint}}.}
 		\end{listing}
@@ -232,7 +233,8 @@
 				highlightlines={43-45,47-48,51-53,56-64,66,68-70},
 				firstline=43,
 				lastline=70,
-				escapeinside=||
+				escapeinside=||,
+				breaklines
 			]{python}{poincare_chua.py}
 			\caption{\small\texttt{poincare\_chua.py} usa la función~\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html}{\mintinline{python}{scipy.integrate.solve_ivp}}.}
 		\end{listing}
