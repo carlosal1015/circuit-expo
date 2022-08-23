@@ -14,9 +14,9 @@ def chua(
     t: float, X: ArrayLike, α: float, β: float, m_0: float, m_1: float
 ) -> ArrayLike:
     dX: ArrayLike = np.empty_like(X)
-    g_x = m_1 * X[0] + 0.5 * (m_0 - m_1) * (np.abs(X[0] + 1) - np.abs(X[0] - 1))
+    g_X = m_1 * X[0] + 0.5 * (m_0 - m_1) * (np.abs(X[0] + 1) - np.abs(X[0] - 1))
 
-    dX[0] = α * (X[1] - (g_x))
+    dX[0] = α * (X[1] - g_X)
     dX[1] = X[0] - X[1] + X[2]
     dX[2] = -β * X[1]
     return dX

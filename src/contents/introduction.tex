@@ -46,16 +46,23 @@
 		\end{equation}
 		donde
 		\begin{itemize}
-			\item $V_{C_{1}}$, $V_{C_{2}}$ son los voltajes en los capacitores $C_{1}$, $C_{2}$, y
-			\item $g\left(V_{C_{1}}\right)$ es la curva característica del \emph{diodo de Chua}.
+			\item
+
+			      $V_{C_{1}}$, $V_{C_{2}}$ son los voltajes en los capacitores $C_{1}$, $C_{2}$, y
+
+			\item
+
+			      $g\left(V_{C_{1}}\right)$ es la \alert{curva característica} del \emph{diodo de Chua}.
 		\end{itemize}
 	\end{minipage}
 	\begin{minipage}{0.35\textwidth}
 		\begin{figure}[ht!]
 			\centering
 			\includesvg[width=0.35\paperwidth]{chua_circuit}
-			\caption{Circuito de Chua conformado por la resistencia lineal $R$,
-				inductancia lineal $L$ e $i_{L}$ es la intensidad de corriente.}\label{fig:chua_circuit}
+			\caption{
+				Circuito de Chua conformado por la resistencia lineal $R$,
+				inductancia lineal $L$ e $i_{L}$ es la intensidad de corriente.
+			}\label{fig:chua_circuit}
 		\end{figure}
 	\end{minipage}
 
@@ -92,7 +99,9 @@
 		\begin{figure}[ht!]
 			\centering
 			\includesvg[width=0.35\paperwidth]{characteristic_curve}
-			\caption{Curva caracterísitica de la resistencia no lineal $g\left(x\right)$ definida como}\label{fig:piecewise}% Intensidad de corriente versus voltaje.
+			\caption{
+				Curva caracterísitica de la resistencia no lineal $g\left(x\right)$ definida como
+			}\label{fig:piecewise} % Intensidad de corriente versus voltaje.
 		\end{figure}
 		\begin{equation*}
 			g\left(x\right)=
@@ -107,10 +116,27 @@
 \note{
 	Es antisimétrica, osea $\left(x,y,z\right)\to\left(-x,-y,z\right)$ no cambia la ecuación.
 
-	$$
+	\begin{equation*}
 		\frac{\mathrm{d} x}{\mathrm{~d} t}=P x+q \psi\left(r^{*} x\right) \quad, x \in R^{3}
-	$$
-	where $P=\left(\begin{array}{ccc}-a(1+m) & a & 0 \\ 1 & -1 & 1 \\ 0 & -b & -c\end{array}\right), q=\left(\begin{array}{c}-a \\ 0 \\ 0\end{array}\right), r=\left(\begin{array}{l}1 \\ 0 \\ 0\end{array}\right)$, and $\psi(\sigma)=0.5(n-m)(|\sigma+1|-|\sigma-1|)$
+	\end{equation*}
+	donde
+	\begin{math}
+		P=
+		\left(\begin{array}{ccc}
+			-a(1+m) & a  & 0  \\
+			1       & -1 & 1  \\
+			0       & -b & -c
+		\end{array}\right),
+		q=
+		\left(\begin{array}{c}
+			-a \\ 0 \\ 0
+		\end{array}\right),
+		r=
+		\left(\begin{array}{l}
+			1 \\ 0 \\ 0
+		\end{array}\right),
+	\end{math}
+	y $\psi(\sigma)=0.5(n-m)(|\sigma+1|-|\sigma-1|)$
 }
 
 \section{Método para determinar el caos}
@@ -128,9 +154,11 @@
 				P\colon V & \to\Sigma                                      \\
 				x         & \mapsto\phi\left(\tau\left(x\right), x\right),
 			\end{align*}
-			donde $\tau\left(x\right)$ es el primer retorno del punto $x$ a $\Sigma$.
-			Además, decimos que $\Sigma$ es la sección transversal al campo vectorial
-			$\diff{x}{t}=f\left(x\right)$, $x\left(t_{0}\right)=x_{0}$.
+			donde $\tau\left(x\right)$ es el primer retorno del punto $x$ a
+			$\Sigma$.
+
+			Además, decimos que $\Sigma$ es la sección transversal al campo
+			vectorial $\diff{x}{t}=f\left(x\right)$, $x\left(t_{0}\right)=x_{0}$.
 		\end{definition}
 	\end{minipage}
 	\begin{minipage}{0.3\textwidth}
@@ -167,14 +195,18 @@
 		\begin{figure}[ht!]
 			\centering
 			\includegraphics[width=0.45\paperwidth]{chua_double_scroll}
-			\caption{Sistema dinámico del doble atractor de Chua.}\label{fig:chua_double_scroll}
+			\caption{
+				Sistema dinámico del doble atractor de Chua.
+			}\label{fig:chua_double_scroll}
 		\end{figure}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
 		\begin{figure}[ht!]
 			\centering
 			\includegraphics[width=0.45\paperwidth]{chua_solutions}
-			\caption{Serie de tiempo.}\label{fig:chua_solutions}
+			\caption{
+				Serie de tiempo.
+			}\label{fig:chua_solutions}
 		\end{figure}
 	\end{minipage}
 \end{frame}
@@ -185,7 +217,9 @@
 	\begin{figure}[ht!]
 		\centering
 		\includegraphics[width=0.58\paperwidth]{changing_beta}
-		\caption{Soluciones de $V_{C_{1}}$ para $\beta_{1}\approx\beta_{2}$.}\label{fig:changing_beta}
+		\caption{
+			Soluciones de $V_{C_{1}}$ cuando $\beta_{1}\approx\beta_{2}$ y los demás parámetros constantes.
+		}\label{fig:changing_beta}
 	\end{figure}
 
 \end{frame}
@@ -197,14 +231,22 @@
 		\begin{figure}[ht!]
 			\centering
 			\includegraphics[width=0.44\paperwidth]{chua_double_atractor}
-			\caption{La sección transversal es el plano $\Sigma=\left\{\left(V_{C_{1}},V_{C_{2}},i_{L}\right):V_{C_{1}}=1\right\}$ en el doble atractor de Chua.}\label{fig:chua_doble_atractor}
+			\caption{
+				La sección transversal es el plano
+				\begin{math}
+					\Sigma=\left\{\left(V_{C_{1}},V_{C_{2}},i_{L}\right):V_{C_{1}}=1\right\}
+				\end{math}
+				en el doble atractor de Chua.
+			}\label{fig:chua_doble_atractor}
 		\end{figure}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
 		\begin{figure}[ht!]
 			\centering
 			\includegraphics[width=0.44\paperwidth]{V_C_2_t_n_versus_V_C_2_t_n_plus_1}
-			\caption{Mapa de Poincaré: $V_{C_{2}}\left(t_{n}\right)$ versus $V_{C_{2}}\left(t_{n+1}\right)$.}\label{fig:chua_solutions}
+			\caption{
+				Mapa de primer retorno: $V_{C_{2}}\left(t_{n}\right)$ versus $V_{C_{2}}\left(t_{n+1}\right)$.
+			}\label{fig:chua_solutions}
 		\end{figure}
 	\end{minipage}
 \end{frame}
@@ -213,30 +255,35 @@
 
 \begin{frame}[fragile]
 	\frametitle{\secname~\parencite[Sección 8.4.2, pág. 246]{Lynch2018}}
+	En Python 3.10.6, basados en las bibliotecas NumPy 1.23.1, SciPy 1.9.0 y Matplotlib 3.5.2.
 	\begin{minipage}{0.45\textwidth}
 		\begin{listing}[H]
 			\inputminted[
 				fontsize=\tiny,
-				highlightlines={13-22, 25-28, 30-31, 33},
+				highlightlines={13-22,33},
 				firstline=13,
 				lastline=33,
 				escapeinside=||,
 				breaklines,
 			]{python}{chua_double_scroll.py}
-			\caption{\small\texttt{chua\_double\_scroll.py} usa la función~\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html}{\mintinline{python}{scipy.integrate.odeint}}.}
+			\caption{
+				\small\texttt{chua\_double\_scroll.py} usa la función~\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html}{\mintinline{python}{scipy.integrate.odeint}}.
+			}
 		\end{listing}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
 		\begin{listing}[H]
 			\inputminted[
 				fontsize=\tiny,
-				highlightlines={43-45,47-48,51-53,56-64,66,68-70},
+				highlightlines={46-48,56-63},
 				firstline=43,
 				lastline=70,
 				escapeinside=||,
 				breaklines
 			]{python}{poincare_chua.py}
-			\caption{\small\texttt{poincare\_chua.py} usa la función~\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html}{\mintinline{python}{scipy.integrate.solve_ivp}}.}
+			\caption{
+				\small\texttt{poincare\_chua.py} usa la función~\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html}{\mintinline{python}{scipy.integrate.solve_ivp}}.
+			}
 		\end{listing}
 	\end{minipage}
 \end{frame}
@@ -246,11 +293,18 @@
 \begin{frame}
 	\frametitle{\secname}
 	\begin{itemize}
-		\item De la Figura~\ref{fig:changing_beta} podemos ver que el sistema de Chua bajo ciertos parámetros $\alpha=10$  y $\beta_{1}=16.4$, $\beta_{2}=16.401$ es un sistemas caótico ya que para parámetros muy cercanos obtenemos soluciones muy diferentes.
+		\item De la Figura~\ref{fig:changing_beta} podemos ver que el
+		      sistema de Chua bajo ciertos parámetros $\alpha=10$  y
+		      $\beta_{1}=16.4$, $\beta_{2}=16.401$ es un sistemas caótico
+		      ya que para parámetros muy cercanos obtenemos soluciones
+		      muy diferentes.
 
 		      \
 
-		\item Para ciertos parámetros el sistema de Chua se comporta de manera caótica.
+		\item Para ciertos parámetros $\alpha$, $\beta$, $m_{0}$ y $m_{1}$
+		      el sistema de Chua exhibe los atractores en forma de
+		      espiral, doble espiral, doble gancho, de tipo Lorenz o
+		      Rössler~\parencite{271147}.
 
 		      \
 
