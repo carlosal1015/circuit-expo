@@ -9,7 +9,7 @@ from numpy.typing import ArrayLike
 
 # plt.style.use('ggplot')
 # rc('font', **{'family': 'serif', 'serif': ['Computer Modern']})
-rc('text', usetex=True)
+rc("text", usetex=True)
 
 # plt.rcParams['text.usetex'] = True
 # plt.rcParams['font.serif'] = ['Computer Modern']
@@ -37,7 +37,7 @@ def chua(t: float, u: ArrayLike) -> ArrayLike:
     """
     x, y, z = u
     f_x = C_2 * x + 0.5 * (R - C_2) * (abs(x + 1) - abs(x - 1))
-    return [α*(y - x - f_x), x - y + z, -β * y]
+    return [α * (y - x - f_x), x - y + z, -β * y]
 
 
 t_0: float = 0.0
@@ -54,12 +54,14 @@ def poincare(t: ArrayLike, vector: ArrayLike) -> float:
 
 
 poincare.direction: float = -1
-sol: ArrayLike = solve_ivp(chua,
-                           [t_0, t_final],  # 60000
-                           u0,
-                           events=poincare,
-                           dense_output=True,
-                           vectorized=True)
+sol: ArrayLike = solve_ivp(
+    chua,
+    [t_0, t_final],  # 60000
+    u0,
+    events=poincare,
+    dense_output=True,
+    vectorized=True,
+)
 
 sol.sol
 
@@ -67,38 +69,36 @@ t = sol.t_events[0]
 vectors = sol.sol(t)
 x, y, z = vectors
 
-with plt.style.context('fivethirtyeight'):
+with plt.style.context("fivethirtyeight"):
     chua_attractor = plt.figure()
-    ax = chua_attractor.add_subplot(111, projection='3d')
-    ax.plot(sol.y[0], sol.y[1], sol.y[2], ',', alpha=0.12)
+    ax = chua_attractor.add_subplot(111, projection="3d")
+    ax.plot(sol.y[0], sol.y[1], sol.y[2], ",", alpha=0.12)
     x, y, z = vectors
     ax.plot(x, y, z, ".", alpha=0.4)
-    ax.set_xlabel(r'$v_{C_{1}}$', fontsize=15)
-    ax.set_ylabel(r'$v_{C_{2}}$', fontsize=15)
-    ax.set_zlabel(r'$i_{L}$', fontsize=15)
+    ax.set_xlabel(r"$v_{C_{1}}$", fontsize=15)
+    ax.set_ylabel(r"$v_{C_{2}}$", fontsize=15)
+    ax.set_zlabel(r"$i_{L}$", fontsize=15)
     plt.tick_params(labelsize=15)
-    plt.savefig('chua_doble_atractor.pdf',
-                transparent=True, bbox_inches='tight')
+    plt.savefig("chua_doble_atractor.pdf", transparent=True, bbox_inches="tight")
     plt.close()
 
-with plt.style.context('fivethirtyeight'):
+with plt.style.context("fivethirtyeight"):
     fig = plt.figure()
-    ax = fig.add_subplot(111, projection='3d')
+    ax = fig.add_subplot(111, projection="3d")
     ax.view_init(30, -90)
-    ax.plot(sol.y[0], sol.y[1], sol.y[2], ',')
+    ax.plot(sol.y[0], sol.y[1], sol.y[2], ",")
     ax.plot(x, y, z, ".")
-    ax.set_xlabel(r'$v_{C_{1}}$', fontsize=15)
-    ax.set_ylabel(r'$v_{C_{2}}$', fontsize=15)
-    ax.set_zlabel(r'$i_{L}$', fontsize=15)
-    plt.savefig('chua_doble_atractor30.pdf',
-                transparent=True, bbox_inches='tight')
+    ax.set_xlabel(r"$v_{C_{1}}$", fontsize=15)
+    ax.set_ylabel(r"$v_{C_{2}}$", fontsize=15)
+    ax.set_zlabel(r"$i_{L}$", fontsize=15)
+    plt.savefig("chua_doble_atractor30.pdf", transparent=True, bbox_inches="tight")
     plt.close()
 
 
-with plt.style.context('fivethirtyeight'):
+with plt.style.context("fivethirtyeight"):
     y = vectors[1]
     plt.plot(y[:-1], y[1:], ",")
-    plt.xlabel(r'$v_{C_{2}}\left(t_{n}\right)$', fontsize=15)
-    plt.ylabel(r'$v_{C_{2}}\left(t_{n+1}\right)$', fontsize=15)
-    plt.savefig('poincare_chua.pdf', transparent=True, bbox_inches='tight')
+    plt.xlabel(r"$v_{C_{2}}\left(t_{n}\right)$", fontsize=15)
+    plt.ylabel(r"$v_{C_{2}}\left(t_{n+1}\right)$", fontsize=15)
+    plt.savefig("poincare_chua.pdf", transparent=True, bbox_inches="tight")
     plt.close()

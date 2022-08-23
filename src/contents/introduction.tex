@@ -37,9 +37,9 @@
 		\begin{equation}\label{eq:chua}
 			\left.
 			\begin{aligned}
-				\diff{V_{C_{1}}}{t} & =\frac{1}{RC_{1}}(V_{C_{2}} - V_{C_{1}} - g(V_{C_{1}})), \\
-				\diff{V_{C_{2}}}{t} & =\frac{1}{RC_{2}}(V_{C_{1}} - V_{C_{2}} + Ri_{L}),       \\
-				\diff{i_{L}}{t}     & =-\frac{1}{L}V_{C_{2}},
+				\diff{V_{C_{1}}}{t} & =\frac{1}{RC_{1}}(V_{C_{2}} - V_{C_{1}} - g(V_{C_{1}})) \\
+				\diff{V_{C_{2}}}{t} & =\frac{1}{RC_{2}}(V_{C_{1}} - V_{C_{2}} + Ri_{L})       \\
+				\diff{i_{L}}{t}     & =-\frac{1}{L}V_{C_{2}}
 			\end{aligned}
 			\right\}
 			\text{\alert{Sistema de Chua}}
@@ -71,7 +71,7 @@
 
 \begin{frame}
 	\frametitle{\subsecname}
-	\begin{minipage}{0.45\textwidth}
+	\begin{minipage}{0.55\textwidth}
 		\begin{equation}\label{eq:chua_adimensional}
 			\left\{
 			\begin{aligned}
@@ -88,11 +88,11 @@
 			P^{-} & =\left(-1,0,1\right) \\
 		\end{align*}
 	\end{minipage}
-	\begin{minipage}{0.45\textwidth}
+	\begin{minipage}{0.35\textwidth}
 		\begin{figure}[ht!]
 			\centering
 			\includesvg[width=0.35\paperwidth]{characteristic_curve}
-			\caption{Curva caracterísitica de la resistencia no lineal $g\left(x\right)$ definida como}\label{fig:piecewise}%Intensidad de corriente versus voltaje.
+			\caption{Curva caracterísitica de la resistencia no lineal $g\left(x\right)$ definida como}\label{fig:piecewise}% Intensidad de corriente versus voltaje.
 		\end{figure}
 		\begin{equation*}
 			g\left(x\right)=
@@ -166,8 +166,8 @@
 	\begin{minipage}{0.45\textwidth}
 		\begin{figure}[ht!]
 			\centering
-			\includegraphics[width=0.45\paperwidth]{doble_atractor_chua}
-			\caption{Sistema dinámico del doble atractor de Chua.}\label{fig:doble_atractor_chua}
+			\includegraphics[width=0.45\paperwidth]{chua_double_scroll}
+			\caption{Sistema dinámico del doble atractor de Chua.}\label{fig:chua_double_scroll}
 		\end{figure}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
@@ -184,7 +184,7 @@
 
 	\begin{figure}[ht!]
 		\centering
-		\includegraphics[width=0.9\paperwidth]{cambiando_el_beta}
+		\includegraphics[width=0.9\paperwidth]{changing_beta}
 		\caption{Azul: $\beta_{1}$, rojo: $\beta_{2}$.}\label{fig:lyapunov}
 	\end{figure}
 
@@ -213,20 +213,39 @@
 
 \begin{frame}[fragile]
 	\frametitle{\secname}
-	\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html}{\mintinline{python}{scipy.integrate.solve_ivp}}
 	\begin{minipage}{0.45\textwidth}
-		\inputminted[
-			fontsize=\tiny,
-			highlightlines={13-16,28-30,33-38},
-			firstline=1,
-			lastline=41,
-			escapeinside=||
-		]{python}{chua_double.py}
+		\begin{listing}[H]
+			\inputminted[
+				fontsize=\tiny,
+				highlightlines={13-22, 25-28, 30-31, 33},
+				firstline=13,
+				lastline=33,
+				escapeinside=||
+			]{python}{chua_double_scroll.py}
+			\caption{\texttt{chua\_double\_scroll.py} usa la función~\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.odeint.html}{\mintinline{python}{scipy.integrate.odeint}}.}
+		\end{listing}
 	\end{minipage}
 	\begin{minipage}{0.45\textwidth}
 		\inputminted[fontsize=\tiny, highlightlines={13-16,28-30,33-38}, firstline=1, lastline=41]{python}{poincare_chua.py}
 	\end{minipage}
 \end{frame}
+
+% \begin{frame}[fragile]
+% 	\frametitle{\secname}
+% 	\href{https://docs.scipy.org/doc/scipy/reference/generated/scipy.integrate.solve_ivp.html}{\mintinline{python}{scipy.integrate.solve_ivp}}
+% 	\begin{minipage}{0.45\textwidth}
+% 		\inputminted[
+% 			fontsize=\tiny,
+% 			highlightlines={13-16,28-30,33-38},
+% 			firstline=1,
+% 			lastline=41,
+% 			escapeinside=||
+% 		]{python}{chua_double.py}
+% 	\end{minipage}
+% 	\begin{minipage}{0.45\textwidth}
+% 		\inputminted[fontsize=\tiny, highlightlines={13-16,28-30,33-38}, firstline=1, lastline=41]{python}{poincare_chua.py}
+% 	\end{minipage}
+% \end{frame}
 
 \section{Conclusiones}
 
